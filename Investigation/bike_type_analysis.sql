@@ -5,9 +5,9 @@ SELECT
 	count(*) AS total_rides
 FROM
 	rides_cleaned
-GROUP by -- which things to count together (make the piles)
+GROUP by 
 	member_casual, rideable_type
-ORDER by -- how to arrange the results (arrange the results)
+ORDER by
 	member_casual, rideable_type;
 	
 -- Short rides by bike type 
@@ -16,9 +16,9 @@ SELECT
 	count(*) AS total_rides
 FROM
 	rides_cleaned
-WHERE --keep only rows where the condition is true (filter the data)
+WHERE 
 	(julianday(ended_at) - julianday(started_at)) * 86400 < 60
-GROUP by -- which rows to count together (make the piles)
+GROUP by
 	rideable_type
-ORDER by -- how to arrange the results (sort)
+ORDER by 
 	rideable_type;
