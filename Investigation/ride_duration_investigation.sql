@@ -1,3 +1,7 @@
+/* Investigates ride duration patterns and unusually long trips.
+   Includes average ride duration by membership type and queries
+   examining rides exceeding 25 hours and the longest e-bike rides. */
+
 -- 1. Average ride duration by member type
 SELECT 
 	member_casual,
