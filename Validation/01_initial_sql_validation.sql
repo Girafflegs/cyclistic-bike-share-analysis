@@ -14,4 +14,6 @@ SELECT
 	sum(Case When member_casual IS NULL or Trim(member_casual) = '' Then 1 Else 0 End) AS missing_member_casual	
 	
 FROM
-	rides_2025_10
+	rides_2025_10;
+
+
