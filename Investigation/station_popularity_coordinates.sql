@@ -1,3 +1,6 @@
+/* Identifies popular starting stations by membership and bike type.
+   Calculates ride counts and average station coordinates for use
+   in the Starting Station Popularity map visualization. */
 SELECT
 	start_station_name,
 	member_casual,
