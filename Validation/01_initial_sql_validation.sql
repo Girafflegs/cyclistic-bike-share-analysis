@@ -1,3 +1,5 @@
+/* Check for missing or empty values across all 13 columns
+   in the October 2025 trip dataset. */
 SELECT
 	sum(Case When ride_id IS NULL or Trim(ride_id) = '' Then 1 Else 0 End) AS missing_ride_id,
 	sum(Case When rideable_type IS NULL or Trim(rideable_type) = '' Then 1 Else 0 End) AS missing_rideable_type,
@@ -15,5 +17,18 @@ SELECT
 	
 FROM
 	rides_2025_10;
+
+
+/* Identify records with latitude or longitude values
+   outside valid geographic coordinate ranges. */
+SELECT
+	count(*) AS invalid_coordinates
+FROM
+	rides_2025_10
+WHERE
+	CAST(start_lat AS REAL) NOT BETWEEN -90 AND 90
+	OR CAST(end_lat AS REAL) NOT BETWEEN -90 AND 90
+	or CAST(start_lng AS REAL) NOT BETWEEN -180 AND 180
+	Or CAST(end_lng AS REAL) NOT BETWEEN -180 AND 180;
 
 
