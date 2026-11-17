@@ -1,3 +1,6 @@
+/* Checks coordinate completeness in the cleaned 12-month dataset.
+   Counts rides with valid starting station names and identifies
+   records missing starting latitude or longitude. */
 SELECT
 	count(*) as total_rides,
 	sum(
