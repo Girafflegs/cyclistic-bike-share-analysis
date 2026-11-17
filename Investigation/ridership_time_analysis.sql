@@ -45,7 +45,7 @@ SELECT
 	count(*) AS total_rides
 FROM
 	rides_cleaned
-WHERE -- which rows to include (filter)
+WHERE 
 	started_at >= '2025-10-01' AND started_at < '2026-10-01'
 GROUP by 
 	ride_month, member_casual
