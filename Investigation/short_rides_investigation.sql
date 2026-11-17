@@ -1,4 +1,6 @@
-/* Short ride investigation. Examine rides under 60 seconds by membership and bike type */
+/* Investigates rides lasting less than 60 seconds,
+   comparing their frequency across membership types
+   and bike types to assess patterns in unusually short trips. */
 
 -- Total rides by membership type
 SELECT
