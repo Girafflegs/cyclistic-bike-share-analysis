@@ -42,5 +42,56 @@ SELECT
 FROM 
 	rides_2025_10;
 
+-- Counts rides lasting less than 1 minute, grouped by rider type
+SELECT
+	member_casual,
+	count(*)
+FROM
+	rides_2025_10
+WHERE	
+	(julianday(ended_at) - julianday(started_at)) * 1440 < 1
+Group by
+	member_casual;
+
+/*Counts rides under 1 minute by rider type, checking for identical start/end coordinates and missing coordinate values*/
+SELECT
+	member_casual,
+	count(*) AS total_short_rides,
+	sum(Case When start_lat = end_lat
+	AND start_lng = end_lng
+	THEN 1
+	ELSE 0 
+	End) AS matching_coordinates,
+	sum(Case When start_lat IS NULL OR trim(start_lat) = ''
+	OR start_lng IS NULL OR trim(start_lng) = ''
+	OR end_lat IS NULL OR trim(end_lat) = ''
+	OR end_lng IS NULL OR trim(end_lng) = ''
+	THEN 1
+	ELSE 0
+	END) AS missing_coordinates
+FROM
+	rides_2025_10
+WHERE	
+	(julianday(ended_at) - julianday(started_at)) * 1440 < 1
+Group by
+	member_casual;
+
+/* Selects rides lasting less than 1 munute with start/end coordinates converted to numeric values. Prepares the data for geographic distance analysis in Python */
+SELECT
+	ride_id,
+	member_casual,
+	started_at,
+	ended_at,
+	CAST(start_lat AS REAL) AS start_lat,
+	CAST(start_lng AS REAL) AS start_lng,
+	CAST(end_lat AS REAL) AS end_lat,
+	CAST(end_lng AS REAL) AS end_lng
+FROM
+	rides_2025_10
+WHERE
+	(julianday(ended_at) - julianday(started_at)) * 1440 < 1;
+	
+
+
 
 
