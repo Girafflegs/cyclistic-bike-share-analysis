@@ -1,0 +1,13 @@
+month,total_rides,duplicate_ids,missing_values_total,columns_valid,unexpected_membership,unexpected_bike_types,invalid_start_timestamps,invalid_end_timestamps,start_station_mismatches,end_station_mismatches,invalid_durations,short_rides,out_of_month_starts
+2025-10,646039,0,598062,True,0,0,0,0,0,0,0,17016,71
+2025-11,356628,0,317066,True,0,0,0,0,0,0,29,9520,128
+2025-12,140534,0,114186,True,0,0,0,0,0,0,0,3961,12
+2026-01,137787,0,104688,True,0,0,0,0,0,0,0,3846,23
+2026-02,201450,0,134118,True,0,0,0,0,0,0,0,4022,18
+2026-03,317037,0,241632,True,0,0,0,0,0,0,0,8286,22
+2026-04,448252,0,373270,True,0,0,0,0,0,0,0,12420,0
+2026-05,653704,0,559558,True,0,0,0,0,0,0,0,17769,35
+2026-06,762550,0,647132,True,0,0,0,0,0,0,0,20516,78
+2026-07,869051,0,773240,True,0,0,0,0,0,0,0,22315,123
+2026-08,868191,0,775860,True,0,0,0,0,0,0,0,20911,173
+2026-09,770562,0,662036,True,0,0,0,0,0,0,0,18610,51
