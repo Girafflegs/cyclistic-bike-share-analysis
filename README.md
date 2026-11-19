@@ -10,7 +10,7 @@ The findings suggest that casual riders use the service more frequently for recr
 
 ## View the Case Study
 
-[View the complete Cyclistic case study presentation](LINK_TO_PRESENTATION)
+[View the complete Cyclistic case study presentation]([LINK_TO_PRESENTATION](https://github.com/Girafflegs/cyclistic-bike-share-analysis/blob/main/Cyclistic_powerpoint.pdf))
 
 ## Repository Contents
 
